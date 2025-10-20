@@ -5,57 +5,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buscador de IAs Modales</title>
   <style>
+    /* --- ESTILO GLOBAL --- */
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
       margin: 0;
-      padding: 20px;
-      color: #333;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    h1 {
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid #eee;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #111;
+      margin-left: 25px;
+      font-size: 0.95rem;
+      transition: opacity 0.3s;
+    }
+    nav a:hover {
+      opacity: 0.5;
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fafafa;
       text-align: center;
+      padding: 0 20px;
     }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      animation: fadeInUp 1s ease-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    /* --- BUSCADOR --- */
     .search-box {
-      max-width: 500px;
-      margin: 0 auto;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     input {
-      width: 80%;
-      padding: 10px;
-      font-size: 16px;
+      width: 300px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      transition: 0.3s;
+    }
+    input:focus {
+      border-color: #000;
     }
     button {
-      padding: 10px 15px;
-      font-size: 16px;
-      margin-left: 5px;
+      padding: 12px 25px;
+      background: #111;
+      color: #fff;
+      border: none;
       cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background 0.3s;
     }
+    button:hover {
+      background: #444;
+    }
+
+    /* --- RESULTADOS --- */
     .results {
-      margin-top: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
     .card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+      transition: background 0.3s;
+    }
+    .card:hover {
+      background: #fafafa;
     }
     .card h3 {
-      margin: 0 0 5px 0;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .card p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    /* --- SECCIÓN FINAL --- */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    /* --- ANIMACIONES --- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      header {
+        padding: 15px 20px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>🔍 Buscador de IAs Modales</h1>
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Escribe el nombre o tipo de IA..." />
-    <button onclick="buscarIA()">Buscar</button>
-  </div>
+  <header>
+    <h1>Mi-Primer-Proyecto</h1>
+    <nav>
+      <a href="#buscar">Buscador</a>
+      <a href="#sobre">Sobre el proyecto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="buscar">
+    <h2>Buscador de IAs Modales</h2>
+    <p>Explora las inteligencias artificiales más conocidas del mundo.</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Escribe el nombre o tipo de IA..." />
+      <button onclick="buscarIA()">Buscar</button>
+    </div>
+  </section>
+
   <div id="results" class="results"></div>
+
+  <section id="sobre" class="results">
+    <h2>Sobre este proyecto</h2>
+    <p>Este sitio fue creado como práctica para aprender desarrollo web, inspirado en el diseño moderno de sitios como Pentagram. Utiliza HTML, CSS y JavaScript puros para mantenerlo liviano y fácil de entender.</p>
+  </section>
+
+  <footer>
+    © 2025 Mi-Primer-Proyecto · Hecho con ❤️ por José Mensi
+  </footer>
 
   <script>
     const inteligencias = [
