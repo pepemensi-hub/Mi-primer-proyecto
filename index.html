@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador de IAs Modales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .results {
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin: 0 0 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 Buscador de IAs Modales</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Escribe el nombre o tipo de IA..." />
+    <button onclick="buscarIA()">Buscar</button>
+  </div>
+  <div id="results" class="results"></div>
+
+  <script>
+    const inteligencias = [
+      { nombre: "ChatGPT", tipo: "IA conversacional", descripcion: "Modelo de lenguaje de OpenAI con múltiples modalidades." },
+      { nombre: "Claude", tipo: "IA conversacional", descripcion: "Desarrollada por Anthropic, enfocada en seguridad y contexto." },
+      { nombre: "Gemini", tipo: "IA multimodal", descripcion: "De Google DeepMind, combina texto, imagen y código." },
+      { nombre: "Mistral", tipo: "IA open source", descripcion: "Modelo francés de código abierto eficiente y rápido." },
+      { nombre: "Perplexity", tipo: "IA de búsqueda", descripcion: "Combina motor de búsqueda con razonamiento conversacional." }
+    ];
+
+    function buscarIA() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const resultados = inteligencias.filter(ia =>
+        ia.nombre.toLowerCase().includes(query) ||
+        ia.tipo.toLowerCase().includes(query)
+      );
+
+      const contenedor = document.getElementById("results");
+      contenedor.innerHTML = "";
+
+      if (resultados.length === 0) {
+        contenedor.innerHTML = "<p>No se encontraron resultados.</p>";
+        return;
+      }
+
+      resultados.forEach(ia => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<h3>${ia.nombre}</h3>
+                          <p><strong>Tipo:</strong> ${ia.tipo}</p>
+                          <p>${ia.descripcion}</p>`;
+        contenedor.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
