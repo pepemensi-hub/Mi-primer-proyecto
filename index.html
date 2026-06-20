@@ -1,9 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buona Vita | Tu Pausa Saludable - Cafetería y Pastelería Natural</title>
+  <meta name="description" content="Buona Vita: cafetería, pastelería y jugos naturales. Opciones aptas celíacos. Llevá tu bienestar a un nivel exquisito.">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Buona Vita | Tu Pausa Saludable">
+  <meta property="og:description" content="Cafetería, pastelería y jugos naturales. Aptos celíacos.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Tailwind CDN (para producción: compilar Tailwind) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            verde: { DEFAULT: '#4a7c59', dark: '#35583f', light: '#7fa88a' },
+            crema: '#f7f3ea',
+            tierra: '#a8754f',
+          },
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- JSON-LD: LocalBusiness / Cafetería -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Buona Vita",
+    "slogan": "Tu pausa saludable",
+    "description": "Cafetería, pastelería y jugos naturales. Productos aptos celíacos.",
+    "servesCuisine": ["Saludable", "Sin TACC", "Vegetariana"],
+    "image": "",
+    "telephone": "+549XXXXXXXXXX",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tu dirección",
+      "addressLocality": "Tu ciudad",
+      "addressCountry": "AR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "sameAs": ["https://www.instagram.com/buonavitadelinatural/"]
+  }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Placeholder de imagen: reemplazar div.ph por <img> real */
+    .ph {
+      background: linear-gradient(135deg, #7fa88a 0%, #4a7c59 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: #f7f3ea; font-size: .9rem; letter-spacing: .05em;
+    }
+  </style>
 </head>
-<body>
-<h1>Hola, esta es mi primera web</h1>
+<body class="bg-crema text-verde-dark antialiased font-sans">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-crema/95 backdrop-blur border-b border-verde-light/30">
+    <nav class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between" aria-label="Principal">
+      <a href="#inicio" class="font-display text-2xl font-bold text-verde">Buona Vita</a>
+      <ul class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="#productos" class="hover:text-verde transition-colors">Productos</a></li>
+        <li><a href="#celiacos" class="hover:text-verde transition-colors">Aptos Celíacos</a></li>
+        <li><a href="#nosotros" class="hover:text-verde transition-colors">Nosotros</a></li>
+        <li><a href="#contacto" class="hover:text-verde transition-colors">Contacto</a></li>
+      </ul>
+      <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener"
+         class="bg-verde text-crema px-4 py-2 rounded-full text-sm font-semibold hover:bg-verde-dark transition-colors">
+        Pedí ahora
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="relative">
+    <div class="ph h-[70vh] min-h-[480px]" role="img" aria-label="Interior de la cafetería Buona Vita">
+      [ FOTO HERO — reemplazar este div por &lt;img&gt; ]
+    </div>
+    <div class="absolute inset-0 bg-verde-dark/40 flex items-center">
+      <div class="max-w-6xl mx-auto px-5 w-full">
+        <div class="max-w-xl text-crema">
+          <p class="uppercase tracking-[0.2em] text-sm mb-3">Buona Vita</p>
+          <h1 class="font-display text-5xl md:text-6xl font-bold leading-tight mb-4">
+            Tu pausa saludable
+          </h1>
+          <p class="text-lg md:text-xl mb-8 text-crema/90">
+            Llevá tu bienestar a un nivel exquisito. Cafetería, pastelería y jugos naturales 🥗
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#productos" class="bg-crema text-verde-dark px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors">
+              Ver productos
+            </a>
+            <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener"
+               class="border-2 border-crema px-6 py-3 rounded-full font-semibold hover:bg-crema hover:text-verde-dark transition-colors">
+              Hacé tu pedido
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="max-w-6xl mx-auto px-5 py-20">
+    <div class="text-center mb-14">
+      <h2 class="font-display text-4xl font-bold text-verde mb-3">Lo que preparamos</h2>
+      <p class="text-verde-dark/70 max-w-2xl mx-auto">
+        Todo fresco, natural y pensado para que comas rico sin culpa.
+      </p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="ph h-56" role="img" aria-label="Café de especialidad">[ FOTO ]</div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-bold text-verde mb-2">Cafetería ☕</h3>
+          <p class="text-sm text-verde-dark/70">Café de especialidad, infusiones y opciones frías para acompañar tu día.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="ph h-56" role="img" aria-label="Pastelería saludable">[ FOTO ]</div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-bold text-verde mb-2">Pastelería 🍰</h3>
+          <p class="text-sm text-verde-dark/70">Tortas, budines y dulces elaborados con ingredientes naturales.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="ph h-56" role="img" aria-label="Jugos naturales">[ FOTO ]</div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-bold text-verde mb-2">Jugos naturales 🥤</h3>
+          <p class="text-sm text-verde-dark/70">Exprimidos del día, licuados y bebidas detox 100% naturales.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="ph h-56" role="img" aria-label="Sándwiches y wraps">[ FOTO ]</div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-bold text-verde mb-2">Sándwiches & wraps 🥙</h3>
+          <p class="text-sm text-verde-dark/70">Opciones frescas para un almuerzo liviano y nutritivo.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="ph h-56" role="img" aria-label="Ensaladas">[ FOTO ]</div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-bold text-verde mb-2">Ensaladas 🥗</h3>
+          <p class="text-sm text-verde-dark/70">Combinaciones frescas que podés armar a tu gusto.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="ph h-56" role="img" aria-label="Desayunos y meriendas">[ FOTO ]</div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-bold text-verde mb-2">Desayunos & meriendas 🌅</h3>
+          <p class="text-sm text-verde-dark/70">El combo perfecto para empezar o cortar el día.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CELÍACOS -->
+  <section id="celiacos" class="bg-verde text-crema py-20">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <span class="inline-block bg-crema/20 px-4 py-1 rounded-full text-sm font-semibold mb-5">Sin TACC</span>
+      <h2 class="font-display text-4xl font-bold mb-4">Productos aptos celíacos</h2>
+      <p class="text-lg text-crema/90 max-w-2xl mx-auto">
+        Contamos con una amplia variedad de opciones sin TACC, para que todos puedan disfrutar
+        de su pausa saludable sin preocupaciones.
+      </p>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="max-w-6xl mx-auto px-5 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div class="ph h-80 rounded-2xl" role="img" aria-label="El espacio de Buona Vita">[ FOTO ESPACIO ]</div>
+    <div>
+      <h2 class="font-display text-4xl font-bold text-verde mb-4">Bienestar a un nivel exquisito</h2>
+      <p class="text-verde-dark/80 mb-4">
+        En Buona Vita creemos que comer sano también es un placer. Por eso preparamos cada producto
+        con ingredientes naturales, frescos y seleccionados.
+      </p>
+      <p class="text-verde-dark/80">
+        Un espacio pensado para tu pausa: tranquilo, rico y saludable. Te esperamos.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <h2 class="font-display text-4xl font-bold text-verde mb-8">Visitanos</h2>
+      <div class="grid sm:grid-cols-3 gap-8 mb-12 text-verde-dark/80">
+        <div>
+          <h3 class="font-semibold text-verde mb-2">📍 Dirección</h3>
+          <p class="text-sm">[ Tu dirección acá ]</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-verde mb-2">🕐 Horarios</h3>
+          <p class="text-sm">Lun a Vie: 8 a 20 hs<br>Sáb y Dom: 9 a 21 hs</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-verde mb-2">📱 Redes</h3>
+          <a href="https://www.instagram.com/buonavitadelinatural/" target="_blank" rel="noopener"
+             class="text-sm hover:text-verde">@buonavitadelinatural</a>
+        </div>
+      </div>
+      <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener"
+         class="inline-block bg-verde text-crema px-8 py-4 rounded-full font-semibold text-lg hover:bg-verde-dark transition-colors">
+        Escribinos por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-verde-dark text-crema/80 py-8">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <p class="font-display text-lg text-crema">Buona Vita</p>
+      <p>© <span id="year"></span> Buona Vita · Tu pausa saludable</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"
+     class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
